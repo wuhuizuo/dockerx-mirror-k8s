@@ -68,8 +68,8 @@ function mirror_image {
   IFS=/ read -a SOURCE <<< ${SOURCE_SPEC}
   if grep -vqE '[.:]|localhost' <<< ${SOURCE[0]}; then
     SOURCE=("docker.io" "${SOURCE[@]}")
-  fi
-
+  fi 
+  
   # recombine source spec
   printf -v SOURCE "/%s" "${SOURCE[@]}"; SOURCE=${SOURCE:1}
 
