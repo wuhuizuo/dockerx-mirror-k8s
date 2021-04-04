@@ -1,0 +1,19 @@
+
+name: mirror test
+on:
+  schedule:
+  - cron: "* * * * *"
+
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        id: test
+        run: |
+          docker run \
+            -e SRC_REGISTRY=k8s.gcr.io \
+            -e DST_USERNAME=${{ secrets.DOCKER_USERNAME }} \
+            -e DST_USERNAME=${{ secrets.DOCKER_PASSWORD }} \
+            wuhuizuo/dockerx-mirror-k8s:edge \
+            k8s.gcr.io/kube-apiserver k8smx/kube-apiserver v1.20.5
