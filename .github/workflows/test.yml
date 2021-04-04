@@ -21,6 +21,6 @@ jobs:
             -v `pwd`/xxx:/xxx \
             -e SRC_REGISTRY=k8s.gcr.io \
             -e DST_USERNAME=${{ secrets.DOCKER_USERNAME }} \
-            -e DST_USERNAME=${{ secrets.DOCKER_PASSWORD }} \
+            -e DST_PASSWORD=${{ secrets.DOCKER_PASSWORD }} \
             wuhuizuo/dockerx-mirror-k8s:edge /xxx
             
