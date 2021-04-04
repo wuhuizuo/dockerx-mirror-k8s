@@ -14,9 +14,13 @@ jobs:
       - name: test
         id: test
         run: |
+          cat <<EOF >xxx
+          k8s.gcr.io/kube-apiserver k8smx/kube-apiserver v1.20.5
+          EOF
           docker run \
+            -v `pwd`/xxx:/xxx \
             -e SRC_REGISTRY=k8s.gcr.io \
             -e DST_USERNAME=${{ secrets.DOCKER_USERNAME }} \
             -e DST_USERNAME=${{ secrets.DOCKER_PASSWORD }} \
-            wuhuizuo/dockerx-mirror-k8s:edge \
-            k8s.gcr.io/kube-apiserver k8smx/kube-apiserver v1.20.5
+            wuhuizuo/dockerx-mirror-k8s:edge /xxx
+            
