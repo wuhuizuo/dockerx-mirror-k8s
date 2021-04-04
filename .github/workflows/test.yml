@@ -1,6 +1,9 @@
 
 name: mirror test
 on:
+  push:
+    branches:
+      - main
   schedule:
   - cron: "* * * * *"
 
