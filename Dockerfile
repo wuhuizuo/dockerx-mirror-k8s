@@ -12,7 +12,7 @@ RUN mkdir -p /root/.docker/cli-plugins/ && \
     chmod a+x /root/.docker/cli-plugins/*
 
 # Add scripts
-COPY image.sh entrypoint.sh /
+COPY mirror.sh entrypoint.sh /
  
 # ENV SRC_REGISTRY SRC_USERNAME SRC_PASSWORD DEST_REGISTRY DEST_USERNAME DEST_PASSWORD
 # ENV DEST_ORG_OVERRIDE
