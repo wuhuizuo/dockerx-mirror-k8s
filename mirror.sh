@@ -35,7 +35,6 @@ function copy_if_changed {
   fi
 }
 
-
 function set_repo_description {
   SOURCE_SPEC="${1}"
   DEST_SPEC="${2}"
