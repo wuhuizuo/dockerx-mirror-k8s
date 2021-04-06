@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**.yaml'
+      - 'src/**.yml'
+
+  schedule:
+    - cron: '0 * * * *'  # every hour
 
 jobs:
   k8s-basic-images:
