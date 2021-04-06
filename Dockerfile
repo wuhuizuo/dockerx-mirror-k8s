@@ -1,4 +1,4 @@
-FROM quay.io/skopeo/stable:v1.1.1
+FROM quay.io/skopeo/stable:v1.2.0
 
 # Add jq
 RUN yum -y update && yum -y install jq && yum -y clean all && rm -rf /var/cache/dnf/* /var/log/dnf* /var/log/yum*
