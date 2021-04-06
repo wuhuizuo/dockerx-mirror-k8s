@@ -1,0 +1,6 @@
+k8s.gcr.io:
+  tls-verify: false
+  images:
+    flannel: []
+    ingress-nginx/controller: []
+    k8s.gcr.io/defaultbackend-amd64: []

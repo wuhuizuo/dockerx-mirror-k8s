@@ -1,0 +1,10 @@
+k8s.gcr.io:
+  tls-verify: false
+  images:
+    kube-apiserver: []
+    kube-controller-manager: []
+    kube-scheduler: []
+    kube-proxy: []
+    pause: []
+    etcd: []
+    coredns: []

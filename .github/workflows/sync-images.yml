@@ -1,0 +1,41 @@
+
+name: Sync K8S images
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  k8s-basic-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2    
+      - name: Sync images to DockerHub with skopeo
+        id: k8s_basic
+        run: |
+          docker run --rm -v `pwd`/src:/src \
+          quay.io/skopeo/stable:v1.2.0 \
+            sync \
+              --src yaml \
+              --dest docker \
+              --src-no-creds \
+              --dest-creds ${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }} \
+              /src/k8s_basic.yml docker.io/k8smx
+
+  k8s-addon-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2    
+      - name: Sync images to DockerHub with skopeo
+        id: k8s_addon
+        run: |
+          docker run --rm -v `pwd`/src:/src \
+          quay.io/skopeo/stable:v1.2.0 \
+            sync \
+              --src yaml \
+              --dest docker \
+              --src-no-creds \
+              --dest-creds ${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }} \
+              /src/k8s_addon.yml docker.io/k8smx
