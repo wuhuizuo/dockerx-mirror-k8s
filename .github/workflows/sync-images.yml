@@ -23,6 +23,7 @@ jobs:
           docker run --rm -v `pwd`/src:/src \
           quay.io/skopeo/stable:v1.2.0 \
             sync \
+              --all \
               --src yaml \
               --dest docker \
               --src-no-creds \
@@ -40,6 +41,7 @@ jobs:
           docker run --rm -v `pwd`/src:/src \
           quay.io/skopeo/stable:v1.2.0 \
             sync \
+              --all \            
               --src yaml \
               --dest docker \
               --src-no-creds \
