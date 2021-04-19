@@ -9,7 +9,7 @@ on:
       - 'src/**.yml'
 
   schedule:
-    - cron: '0 * * * *'  # every hour
+    - cron: '0 0 * * *'  # every day
 
 jobs:
   k8s-basic-images:
