@@ -3,4 +3,4 @@ k8s.gcr.io:
   images:
     flannel: []
     ingress-nginx/controller: []
-    k8s.gcr.io/defaultbackend-amd64: []
+    defaultbackend-amd64: []
