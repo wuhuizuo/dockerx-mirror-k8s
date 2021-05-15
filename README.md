@@ -1,5 +1,7 @@
 # dockerx-mirror-k8s
 
+[![Sync K8S images](https://github.com/wuhuizuo/dockerx-mirror-k8s/actions/workflows/sync-images.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/wuhuizuo/dockerx-mirror-k8s/actions/workflows/sync-images.yml)
+
 dockerx构建移植推送到自定义registry,避免避免到国外的低速拉取.
 
 ## 原理
